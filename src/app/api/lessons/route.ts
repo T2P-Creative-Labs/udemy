@@ -10,7 +10,12 @@ export async function GET(req: Request) {
   }
   const data = await db.query.lessons.findMany();
 
-  return NextResponse.json(data);
+  const response = NextResponse.json(data);
+  response.headers.set('X-Total-Count', data.length.toString());
+  response.headers.set('Access-Control-Expose-Headers', 'Content-Range');
+  response.headers.set('Content-Range', `bytes ${0}-${100}/${data.length}`);
+  
+  return response;
 }
 
 export async function POST(req: Request) {
