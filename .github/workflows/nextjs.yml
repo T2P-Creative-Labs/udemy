@@ -28,4 +28,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: registry.gitlab.com/t2p2/registry/profilo:latest
+          tags: registry.gitlab.com/t2p2/registry/udemy:latest
