@@ -9,7 +9,7 @@ jobs:
     steps:
       -
         name: Set up Docker
-        uses: docker/setup-docker@v2
+        uses: docker/setup-docker-action@v2
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -25,4 +25,3 @@ jobs:
         with:
           push: true
           tags: gitlab.com/t2p2/registry/udemy:latest
-
