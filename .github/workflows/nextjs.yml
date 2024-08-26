@@ -4,9 +4,12 @@ on:
   push:
 
 jobs:
-  build:
+  docker:
     runs-on: self-hosted
     steps:
+      -
+        name: Set up Docker
+        uses: docker/setup-docker@v2
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -21,4 +24,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: registry.gitlab.com/<your-namespace>/<your-repo>:latest
+          tags: gitlab.com/t2p2/registry/udemy:latest
+
