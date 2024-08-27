@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "db:studio": "npx drizzle-kit studio",
+    "db:create": "tsx ./src/scripts/create.ts",
     "db:push": "npx drizzle-kit push:pg",
     "db:seed": "tsx ./src/scripts/seed.ts",
     "db:reset": "tsx ./src/scripts/reset.ts",
